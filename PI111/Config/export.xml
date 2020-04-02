@@ -1,0 +1,1248 @@
+<datapower-configuration version="3"><export-details><description>Exported Configuration</description><user>ashankar</user><domain>Primark-DEV</domain><comment/><product-id>5725</product-id><product>IDG</product><display-product>IDG</display-product><model>IBM DataPower Gateway</model><display-model>IBM DataPower Gateway</display-model><device-name>Nonprod-dp01</device-name><serial-number>0000000</serial-number><firmware-version>IDG.2018.4.1.6</firmware-version><display-firmware-version>IDG.2018.4.1.6</display-firmware-version><firmware-build>309660</firmware-build><delivery-type>LTS</delivery-type><firmware-timestamp>2019/06/06 06:33:26</firmware-timestamp><current-date>2020-04-01</current-date><current-time>10:18:12 BST</current-time><reset-date>2020-03-02</reset-date><reset-time>16:24:54 GMT</reset-time><login-message/><custom-ui-file/></export-details><interface-data><interface name="eth0" type="Ethernet" vers="ipv4" ip-addr="172.24.68.11"/><interface name="eth1" type="Ethernet" vers="ipv4" ip-addr="172.24.69.11"/><interface name="eth2" type="Ethernet" vers="ipv4" ip-addr="172.24.67.11"/></interface-data><configuration domain="Primark-DEV"><DomainSettings name="default" intrinsic="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<PasswordTreatment>none</PasswordTreatment></DomainSettings><PasswordAlias name="SFTP_ESB_PWD" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>SFTP ESB PASSWORD</UserSummary>
+<DomainSettings class="DomainSettings">default</DomainSettings></PasswordAlias><HTTPUserAgent name="SFTP_ESB_USER_AGENT" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<MaxRedirects>8</MaxRedirects>
+<Timeout>300</Timeout>
+<BasicAuthPolicies>
+<RegExp>*</RegExp>
+<UserName>ftpuser</UserName>
+<Password/>
+<PasswordAlias class="PasswordAlias">SFTP_ESB_PWD</PasswordAlias></BasicAuthPolicies></HTTPUserAgent><XMLManager name="SFTP_ESB_XML_MANAGER" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<CacheSize>256</CacheSize>
+<SHA1Caching>on</SHA1Caching>
+<StaticDocumentCalls>on</StaticDocumentCalls>
+<SearchResults>on</SearchResults>
+<SupportTxWarn>off</SupportTxWarn>
+<Memoization>on</Memoization>
+<ParserLimitsBytesScanned>4194304</ParserLimitsBytesScanned>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<DocCacheMaxDocs>5000</DocCacheMaxDocs>
+<DocCacheSize>0</DocCacheSize>
+<DocMaxWrites>32768</DocMaxWrites>
+<UserAgent class="HTTPUserAgent">SFTP_ESB_USER_AGENT</UserAgent></XMLManager><SSHClientProfile name="SFTP_SSH_PROFILE" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserName>ftpuser</UserName>
+<ProfileUsage>sftp</ProfileUsage>
+<SSHUserAuthentication>
+<publickey>off</publickey>
+<password>on</password></SSHUserAuthentication>
+<PasswordAlias class="PasswordAlias">SFTP_ESB_PWD</PasswordAlias>
+<PersistentConnections>off</PersistentConnections>
+<PersistentConnectionTimeout>120</PersistentConnectionTimeout>
+<StrictHostKeyChecking>off</StrictHostKeyChecking>
+<Ciphers>CHACHA20-POLY1305_AT_OPENSSH.COM</Ciphers>
+<Ciphers>AES128-CTR</Ciphers>
+<Ciphers>AES192-CTR</Ciphers>
+<Ciphers>AES256-CTR</Ciphers>
+<Ciphers>AES128-GCM_AT_OPENSSH.COM</Ciphers>
+<Ciphers>AES256-GCM_AT_OPENSSH.COM</Ciphers>
+<Ciphers>ARCFOUR256</Ciphers>
+<Ciphers>ARCFOUR128</Ciphers>
+<Ciphers>AES128-CBC</Ciphers>
+<Ciphers>3DES-CBC</Ciphers>
+<Ciphers>BLOWFISH-CBC</Ciphers>
+<Ciphers>CAST128-CBC</Ciphers>
+<Ciphers>AES192-CBC</Ciphers>
+<Ciphers>AES256-CBC</Ciphers>
+<Ciphers>ARCFOUR</Ciphers>
+<Ciphers>RIJNDAEL-CBC_AT_LYSATOR.LIU.SE</Ciphers>
+<LegacyKex>no</LegacyKex></SSHClientProfile><SFTPFilePollerSourceProtocolHandler name="SFTP_ESB_PI319_VENTUREEV_FSH" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>SFTP_ESB_PI319_VENTUREEV_FSH</UserSummary>
+<TargetDirectory>sftp://172.22.64.10:22/home/ftpuser/ortest/outbound/FMInterfaces/EV/</TargetDirectory>
+<DelayBetweenPolls>3000000</DelayBetweenPolls>
+<InputFileMatchPattern>^(EV_FF-547).*(xml)$</InputFileMatchPattern>
+<DeleteOnSuccess>on</DeleteOnSuccess>
+<SuccessRenamePattern>$0.ok</SuccessRenamePattern>
+<DeleteOnError>off</DeleteOnError>
+<ErrorRenamePattern>$0.error</ErrorRenamePattern>
+<GenerateResultFile>off</GenerateResultFile>
+<ProcessingSeizeTimeout>0</ProcessingSeizeTimeout>
+<XMLManager class="XMLManager">SFTP_ESB_XML_MANAGER</XMLManager>
+<MaxTransfersPerPoll>15</MaxTransfersPerPoll>
+<SSHClientConnection class="SSHClientProfile">SFTP_SSH_PROFILE</SSHClientConnection></SFTPFilePollerSourceProtocolHandler><PasswordAlias name="SFTP_CEVA_PWD" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<DomainSettings class="DomainSettings">default</DomainSettings></PasswordAlias><HTTPUserAgent name="SFTP_CEVA_USER_AGENT" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<MaxRedirects>8</MaxRedirects>
+<Timeout>300</Timeout>
+<BasicAuthPolicies>
+<RegExp>https://*</RegExp>
+<UserName>eai-primarknam</UserName>
+<Password/>
+<PasswordAlias class="PasswordAlias">SFTP_CEVA_PWD</PasswordAlias></BasicAuthPolicies></HTTPUserAgent><XMLManager name="SFTP_CEVA_XML_MANAGER" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<CacheSize>256</CacheSize>
+<SHA1Caching>on</SHA1Caching>
+<StaticDocumentCalls>on</StaticDocumentCalls>
+<SearchResults>on</SearchResults>
+<SupportTxWarn>off</SupportTxWarn>
+<Memoization>on</Memoization>
+<ParserLimitsBytesScanned>4194304</ParserLimitsBytesScanned>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<DocCacheMaxDocs>5000</DocCacheMaxDocs>
+<DocCacheSize>0</DocCacheSize>
+<DocMaxWrites>32768</DocMaxWrites>
+<UserAgent class="HTTPUserAgent">SFTP_CEVA_USER_AGENT</UserAgent></XMLManager><SSLClientProfile name="HTTPS_CEVA_SSL_CLIENT_PROFILE" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>on</SSLv3>
+<TLSv1d0>on</TLSv1d0>
+<TLSv1d1>on</TLSv1d1>
+<TLSv1d2>on</TLSv1d2></Protocols>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>DHE_RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_3DES_EDE_CBC_SHA</Ciphers>
+<ValidateServerCert>off</ValidateServerCert>
+<Caching>on</Caching>
+<CacheTimeout>300</CacheTimeout>
+<CacheSize>100</CacheSize>
+<SSLClientFeatures>
+<use-sni>on</use-sni>
+<permit-insecure-servers>on</permit-insecure-servers>
+<compression>off</compression></SSLClientFeatures>
+<EllipticCurves>secp521r1</EllipticCurves>
+<EllipticCurves>secp384r1</EllipticCurves>
+<EllipticCurves>secp256k1</EllipticCurves>
+<EllipticCurves>secp256r1</EllipticCurves>
+<UseCustomSNIHostname>no</UseCustomSNIHostname>
+<ValidateHostname>off</ValidateHostname>
+<HostnameValidationFlags>
+<X509_CHECK_FLAG_ALWAYS_CHECK_SUBJECT>off</X509_CHECK_FLAG_ALWAYS_CHECK_SUBJECT>
+<X509_CHECK_FLAG_NO_WILDCARDS>off</X509_CHECK_FLAG_NO_WILDCARDS>
+<X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS>off</X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS>
+<X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS>off</X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS>
+<X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS>off</X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS></HostnameValidationFlags>
+<HostnameValidationFailOnError>off</HostnameValidationFailOnError></SSLClientProfile><Matching name="matchall" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<MatchRules>
+<Type>url</Type>
+<HttpTag/>
+<HttpValue/>
+<Url>*</Url>
+<ErrorCode/>
+<XPATHExpression/>
+<Method>default</Method>
+<CustomMethod/></MatchRules>
+<MatchWithPCRE>off</MatchWithPCRE>
+<CombineWithOr>off</CombineWithOr></Matching><StylePolicyAction name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_0_xform_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Audit.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_0_route-action_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>route-action</Type>
+<Input>INPUT</Input>
+<Transform>local:///SFTP_ESB_PI319_VENTUREEV_CEVA_ROUTING.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_0_results_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_0_xform_0</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_0_route-action_0</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_0_results_0</Actions>
+<Direction>request-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicyAction name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_1_xform_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Audit.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_1_results_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_1_xform_2</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_1_results_1</Actions>
+<Direction>response-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicyAction name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_2_xform_4" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Exception.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_2_results_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_2_xform_4</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_2_results_2</Actions>
+<Direction>error-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicy name="SFTP_ESB_PI319_VENTUREEV_CEVA_PPY" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<DefStylesheetForSoap>store:///filter-reject-all.xsl</DefStylesheetForSoap>
+<DefStylesheetForXsl>store:///identity.xsl</DefStylesheetForXsl>
+<DefXQueryForJSON>store:///reject-all-json.xq</DefXQueryForJSON>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_0</Rule></PolicyMaps>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_1</Rule></PolicyMaps>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY_rule_2</Rule></PolicyMaps></StylePolicy><PolicyAttachments name="SFTP_ESB_PI319_VENTUREEV_CEVA_MPGW" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<EnforcementMode>enforce</EnforcementMode>
+<PolicyReferences>on</PolicyReferences>
+<SLAEnforcementMode>allow-if-no-sla</SLAEnforcementMode></PolicyAttachments><MultiProtocolGateway name="SFTP_ESB_PI319_VENTUREEV_CEVA_MPGW" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>SFTP_ESB_PI319_VENTUREEV_CEVA_MPGW</UserSummary>
+<Priority>normal</Priority>
+<FrontProtocol class="SFTPFilePollerSourceProtocolHandler">SFTP_ESB_PI319_VENTUREEV_FSH</FrontProtocol>
+<XMLManager class="XMLManager">SFTP_CEVA_XML_MANAGER</XMLManager>
+<SSLClientConfigType>client</SSLClientConfigType>
+<SSLClient class="SSLClientProfile">HTTPS_CEVA_SSL_CLIENT_PROFILE</SSLClient>
+<DefaultParamNamespace>http://www.datapower.com/param/config</DefaultParamNamespace>
+<QueryParamNamespace>http://www.datapower.com/param/query</QueryParamNamespace>
+<PropagateURI>on</PropagateURI>
+<MonitorProcessingPolicy>terminate-at-first-throttle</MonitorProcessingPolicy>
+<RequestAttachments>strip</RequestAttachments>
+<ResponseAttachments>strip</ResponseAttachments>
+<RequestAttachmentsFlowControl>off</RequestAttachmentsFlowControl>
+<ResponseAttachmentsFlowControl>off</ResponseAttachmentsFlowControl>
+<RootPartNotFirstAction>process-in-order</RootPartNotFirstAction>
+<FrontAttachmentFormat>dynamic</FrontAttachmentFormat>
+<BackAttachmentFormat>dynamic</BackAttachmentFormat>
+<MIMEFrontHeaders>on</MIMEFrontHeaders>
+<MIMEBackHeaders>on</MIMEBackHeaders>
+<StreamOutputToBack>buffer-until-verification</StreamOutputToBack>
+<StreamOutputToFront>buffer-until-verification</StreamOutputToFront>
+<MaxMessageSize>0</MaxMessageSize>
+<GatewayParserLimits>off</GatewayParserLimits>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<ParserLimitsAttachmentByteCount>2000000000</ParserLimitsAttachmentByteCount>
+<ParserLimitsAttachmentPackageByteCount>0</ParserLimitsAttachmentPackageByteCount>
+<DebugMode persisted="false">on</DebugMode>
+<DebuggerType>internal</DebuggerType>
+<DebugHistory>25</DebugHistory>
+<FlowControl>off</FlowControl>
+<SOAPSchemaURL>store:///schemas/soap-envelope.xsd</SOAPSchemaURL>
+<FrontTimeout>120</FrontTimeout>
+<BackTimeout>120</BackTimeout>
+<FrontPersistentTimeout>180</FrontPersistentTimeout>
+<BackPersistentTimeout>180</BackPersistentTimeout>
+<IncludeResponseTypeEncoding>off</IncludeResponseTypeEncoding>
+<BackHTTPVersion>HTTP/1.1</BackHTTPVersion>
+<PersistentConnections>on</PersistentConnections>
+<LoopDetection>off</LoopDetection>
+<DoHostRewriting>on</DoHostRewriting>
+<DoChunkedUpload>off</DoChunkedUpload>
+<ProcessHTTPErrors>on</ProcessHTTPErrors>
+<HTTPClientIPLabel>X-Client-IP</HTTPClientIPLabel>
+<HTTPLogCorIDLabel>X-Global-Transaction-ID</HTTPLogCorIDLabel>
+<InOrderMode>
+<Request>off</Request>
+<Backend>off</Backend>
+<Response>off</Response></InOrderMode>
+<WSAMode>sync2sync</WSAMode>
+<WSARequireAAA>on</WSARequireAAA>
+<WSAStrip>on</WSAStrip>
+<WSADefaultReplyTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultReplyTo>
+<WSADefaultFaultTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultFaultTo>
+<WSAForce>off</WSAForce>
+<WSAGenStyle>sync</WSAGenStyle>
+<WSAHTTPAsyncResponseCode>204</WSAHTTPAsyncResponseCode>
+<WSATimeout>120</WSATimeout>
+<WSRMEnabled>off</WSRMEnabled>
+<WSRMSequenceExpiration>3600</WSRMSequenceExpiration>
+<WSRMDestinationAcceptCreateSequence>on</WSRMDestinationAcceptCreateSequence>
+<WSRMDestinationMaximumSequences>400</WSRMDestinationMaximumSequences>
+<WSRMDestinationInOrder>off</WSRMDestinationInOrder>
+<WSRMDestinationMaximumInOrderQueueLength>10</WSRMDestinationMaximumInOrderQueueLength>
+<WSRMDestinationAcceptOffers>off</WSRMDestinationAcceptOffers>
+<WSRMFrontForce>off</WSRMFrontForce>
+<WSRMBackForce>off</WSRMBackForce>
+<WSRMBackCreateSequence>off</WSRMBackCreateSequence>
+<WSRMFrontCreateSequence>off</WSRMFrontCreateSequence>
+<WSRMSourceMakeOffer>off</WSRMSourceMakeOffer>
+<WSRMUsesSequenceSSL>off</WSRMUsesSequenceSSL>
+<WSRMSourceMaximumSequences>400</WSRMSourceMaximumSequences>
+<WSRMSourceRetransmissionInterval>10</WSRMSourceRetransmissionInterval>
+<WSRMSourceExponentialBackoff>on</WSRMSourceExponentialBackoff>
+<WSRMSourceMaximumRetransmissions>4</WSRMSourceMaximumRetransmissions>
+<WSRMSourceMaximumQueueLength>30</WSRMSourceMaximumQueueLength>
+<WSRMSourceRequestAckCount>1</WSRMSourceRequestAckCount>
+<WSRMSourceInactivityClose>360</WSRMSourceInactivityClose>
+<ForcePolicyExec>off</ForcePolicyExec>
+<RewriteErrors>on</RewriteErrors>
+<DelayErrors>on</DelayErrors>
+<DelayErrorsDuration>1000</DelayErrorsDuration>
+<RequestType>xml</RequestType>
+<ResponseType>xml</ResponseType>
+<FollowRedirects>on</FollowRedirects>
+<RewriteLocationHeader>off</RewriteLocationHeader>
+<StylePolicy class="StylePolicy">SFTP_ESB_PI319_VENTUREEV_CEVA_PPY</StylePolicy>
+<Type>dynamic-backend</Type>
+<AllowCompression>off</AllowCompression>
+<AllowCacheControlHeader>off</AllowCacheControlHeader>
+<PolicyAttachments class="PolicyAttachments">SFTP_ESB_PI319_VENTUREEV_CEVA_MPGW</PolicyAttachments>
+<WSMAgentMonitor>off</WSMAgentMonitor>
+<WSMAgentMonitorPCM>all-messages</WSMAgentMonitorPCM>
+<ProxyHTTPResponse>off</ProxyHTTPResponse>
+<TransactionTimeout>0</TransactionTimeout></MultiProtocolGateway><SFTPFilePollerSourceProtocolHandler name="SFTP_ESB_PI313_VENTUREPL_FSH" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>SFTP_ESB_PI313_VENTUREPL_FSH</UserSummary>
+<TargetDirectory>sftp://172.22.64.10:22/home/ftpuser/ortest/outbound/FMInterfaces/PL/</TargetDirectory>
+<DelayBetweenPolls>3000000</DelayBetweenPolls>
+<InputFileMatchPattern>^(PL_FF-547).*(xml)$</InputFileMatchPattern>
+<DeleteOnSuccess>on</DeleteOnSuccess>
+<SuccessRenamePattern>$0.ok</SuccessRenamePattern>
+<DeleteOnError>off</DeleteOnError>
+<ErrorRenamePattern>$0.error</ErrorRenamePattern>
+<GenerateResultFile>off</GenerateResultFile>
+<ProcessingSeizeTimeout>0</ProcessingSeizeTimeout>
+<XMLManager class="XMLManager">SFTP_ESB_XML_MANAGER</XMLManager>
+<MaxTransfersPerPoll>15</MaxTransfersPerPoll>
+<SSHClientConnection class="SSHClientProfile">SFTP_SSH_PROFILE</SSHClientConnection></SFTPFilePollerSourceProtocolHandler><StylePolicyAction name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_0_xform_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Audit.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_0_route-action_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>route-action</Type>
+<Input>INPUT</Input>
+<Transform>local:///SFTP_ESB_PI313_VENTUREPL_CEVA_ROUTING.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_0_results_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_0_xform_0</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_0_route-action_0</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_0_results_0</Actions>
+<Direction>request-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicyAction name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_1_xform_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Audit.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_1_results_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_1_xform_2</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_1_results_1</Actions>
+<Direction>response-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicyAction name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_2_xform_4" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Exception.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_2_results_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_2_xform_4</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_2_results_2</Actions>
+<Direction>error-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicy name="SFTP_ESB_PI313_VENTUREPL_CEVA_PPY" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<DefStylesheetForSoap>store:///filter-reject-all.xsl</DefStylesheetForSoap>
+<DefStylesheetForXsl>store:///identity.xsl</DefStylesheetForXsl>
+<DefXQueryForJSON>store:///reject-all-json.xq</DefXQueryForJSON>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_0</Rule></PolicyMaps>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_1</Rule></PolicyMaps>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY_rule_2</Rule></PolicyMaps></StylePolicy><PolicyAttachments name="SFTP_ESB_PI313_VENTUREPL_CEVA_MPGW" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<EnforcementMode>enforce</EnforcementMode>
+<PolicyReferences>on</PolicyReferences>
+<SLAEnforcementMode>allow-if-no-sla</SLAEnforcementMode></PolicyAttachments><MultiProtocolGateway name="SFTP_ESB_PI313_VENTUREPL_CEVA_MPGW" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>SFTP_ESB_PI313_VENTUREPL_CEVA_MPGW</UserSummary>
+<Priority>normal</Priority>
+<FrontProtocol class="SFTPFilePollerSourceProtocolHandler">SFTP_ESB_PI313_VENTUREPL_FSH</FrontProtocol>
+<XMLManager class="XMLManager">SFTP_CEVA_XML_MANAGER</XMLManager>
+<SSLClientConfigType>client</SSLClientConfigType>
+<SSLClient class="SSLClientProfile">HTTPS_CEVA_SSL_CLIENT_PROFILE</SSLClient>
+<DefaultParamNamespace>http://www.datapower.com/param/config</DefaultParamNamespace>
+<QueryParamNamespace>http://www.datapower.com/param/query</QueryParamNamespace>
+<PropagateURI>on</PropagateURI>
+<MonitorProcessingPolicy>terminate-at-first-throttle</MonitorProcessingPolicy>
+<RequestAttachments>strip</RequestAttachments>
+<ResponseAttachments>strip</ResponseAttachments>
+<RequestAttachmentsFlowControl>off</RequestAttachmentsFlowControl>
+<ResponseAttachmentsFlowControl>off</ResponseAttachmentsFlowControl>
+<RootPartNotFirstAction>process-in-order</RootPartNotFirstAction>
+<FrontAttachmentFormat>dynamic</FrontAttachmentFormat>
+<BackAttachmentFormat>dynamic</BackAttachmentFormat>
+<MIMEFrontHeaders>on</MIMEFrontHeaders>
+<MIMEBackHeaders>on</MIMEBackHeaders>
+<StreamOutputToBack>buffer-until-verification</StreamOutputToBack>
+<StreamOutputToFront>buffer-until-verification</StreamOutputToFront>
+<MaxMessageSize>0</MaxMessageSize>
+<GatewayParserLimits>off</GatewayParserLimits>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<ParserLimitsAttachmentByteCount>2000000000</ParserLimitsAttachmentByteCount>
+<ParserLimitsAttachmentPackageByteCount>0</ParserLimitsAttachmentPackageByteCount>
+<DebugMode persisted="false">on</DebugMode>
+<DebuggerType>internal</DebuggerType>
+<DebugHistory>25</DebugHistory>
+<FlowControl>off</FlowControl>
+<SOAPSchemaURL>store:///schemas/soap-envelope.xsd</SOAPSchemaURL>
+<FrontTimeout>120</FrontTimeout>
+<BackTimeout>120</BackTimeout>
+<FrontPersistentTimeout>180</FrontPersistentTimeout>
+<BackPersistentTimeout>180</BackPersistentTimeout>
+<IncludeResponseTypeEncoding>off</IncludeResponseTypeEncoding>
+<BackHTTPVersion>HTTP/1.1</BackHTTPVersion>
+<PersistentConnections>on</PersistentConnections>
+<LoopDetection>off</LoopDetection>
+<DoHostRewriting>on</DoHostRewriting>
+<DoChunkedUpload>off</DoChunkedUpload>
+<ProcessHTTPErrors>on</ProcessHTTPErrors>
+<HTTPClientIPLabel>X-Client-IP</HTTPClientIPLabel>
+<HTTPLogCorIDLabel>X-Global-Transaction-ID</HTTPLogCorIDLabel>
+<InOrderMode>
+<Request>off</Request>
+<Backend>off</Backend>
+<Response>off</Response></InOrderMode>
+<WSAMode>sync2sync</WSAMode>
+<WSARequireAAA>on</WSARequireAAA>
+<WSAStrip>on</WSAStrip>
+<WSADefaultReplyTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultReplyTo>
+<WSADefaultFaultTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultFaultTo>
+<WSAForce>off</WSAForce>
+<WSAGenStyle>sync</WSAGenStyle>
+<WSAHTTPAsyncResponseCode>204</WSAHTTPAsyncResponseCode>
+<WSATimeout>120</WSATimeout>
+<WSRMEnabled>off</WSRMEnabled>
+<WSRMSequenceExpiration>3600</WSRMSequenceExpiration>
+<WSRMDestinationAcceptCreateSequence>on</WSRMDestinationAcceptCreateSequence>
+<WSRMDestinationMaximumSequences>400</WSRMDestinationMaximumSequences>
+<WSRMDestinationInOrder>off</WSRMDestinationInOrder>
+<WSRMDestinationMaximumInOrderQueueLength>10</WSRMDestinationMaximumInOrderQueueLength>
+<WSRMDestinationAcceptOffers>off</WSRMDestinationAcceptOffers>
+<WSRMFrontForce>off</WSRMFrontForce>
+<WSRMBackForce>off</WSRMBackForce>
+<WSRMBackCreateSequence>off</WSRMBackCreateSequence>
+<WSRMFrontCreateSequence>off</WSRMFrontCreateSequence>
+<WSRMSourceMakeOffer>off</WSRMSourceMakeOffer>
+<WSRMUsesSequenceSSL>off</WSRMUsesSequenceSSL>
+<WSRMSourceMaximumSequences>400</WSRMSourceMaximumSequences>
+<WSRMSourceRetransmissionInterval>10</WSRMSourceRetransmissionInterval>
+<WSRMSourceExponentialBackoff>on</WSRMSourceExponentialBackoff>
+<WSRMSourceMaximumRetransmissions>4</WSRMSourceMaximumRetransmissions>
+<WSRMSourceMaximumQueueLength>30</WSRMSourceMaximumQueueLength>
+<WSRMSourceRequestAckCount>1</WSRMSourceRequestAckCount>
+<WSRMSourceInactivityClose>360</WSRMSourceInactivityClose>
+<ForcePolicyExec>off</ForcePolicyExec>
+<RewriteErrors>on</RewriteErrors>
+<DelayErrors>on</DelayErrors>
+<DelayErrorsDuration>1000</DelayErrorsDuration>
+<RequestType>xml</RequestType>
+<ResponseType>xml</ResponseType>
+<FollowRedirects>on</FollowRedirects>
+<RewriteLocationHeader>off</RewriteLocationHeader>
+<StylePolicy class="StylePolicy">SFTP_ESB_PI313_VENTUREPL_CEVA_PPY</StylePolicy>
+<Type>dynamic-backend</Type>
+<AllowCompression>off</AllowCompression>
+<AllowCacheControlHeader>off</AllowCacheControlHeader>
+<PolicyAttachments class="PolicyAttachments">SFTP_ESB_PI313_VENTUREPL_CEVA_MPGW</PolicyAttachments>
+<WSMAgentMonitor>off</WSMAgentMonitor>
+<WSMAgentMonitorPCM>all-messages</WSMAgentMonitorPCM>
+<ProxyHTTPResponse>off</ProxyHTTPResponse>
+<TransactionTimeout>0</TransactionTimeout></MultiProtocolGateway><SFTPFilePollerSourceProtocolHandler name="SFTP_ESB_PI320_VENTUREPO_FSH" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>SFTP_ESB_PI320_VENTUREPO_FSH</UserSummary>
+<TargetDirectory>sftp://172.22.64.10:22/home/ftpuser/ortest/outbound/FMInterfaces/PO/</TargetDirectory>
+<DelayBetweenPolls>3000000</DelayBetweenPolls>
+<InputFileMatchPattern>^(PO_FF-547).*(xml)$</InputFileMatchPattern>
+<DeleteOnSuccess>on</DeleteOnSuccess>
+<SuccessRenamePattern>$0.ok</SuccessRenamePattern>
+<DeleteOnError>off</DeleteOnError>
+<ErrorRenamePattern>$0.error</ErrorRenamePattern>
+<GenerateResultFile>off</GenerateResultFile>
+<ProcessingSeizeTimeout>0</ProcessingSeizeTimeout>
+<XMLManager class="XMLManager">SFTP_ESB_XML_MANAGER</XMLManager>
+<MaxTransfersPerPoll>15</MaxTransfersPerPoll>
+<SSHClientConnection class="SSHClientProfile">SFTP_SSH_PROFILE</SSHClientConnection></SFTPFilePollerSourceProtocolHandler><StylePolicyAction name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_0_xform_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Audit.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_0_route-action_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>route-action</Type>
+<Input>INPUT</Input>
+<Transform>local:///SFTP_ESB_PI320_VENTUREPO_CEVA_ROUTING.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_0_results_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_0_xform_0</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_0_route-action_0</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_0_results_0</Actions>
+<Direction>request-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicyAction name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_1_xform_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Audit.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_1_results_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_1_xform_2</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_1_results_1</Actions>
+<Direction>response-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicyAction name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_2_xform_4" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>xform</Type>
+<Input>INPUT</Input>
+<Transform>local:///CMN_FRMWRK/Exception.xsl</Transform>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>NULL</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_2_results_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_2_xform_4</Actions>
+<Actions class="StylePolicyAction">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_2_results_2</Actions>
+<Direction>error-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicy name="SFTP_ESB_PI320_VENTUREPO_CEVA_PPY" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<DefStylesheetForSoap>store:///filter-reject-all.xsl</DefStylesheetForSoap>
+<DefStylesheetForXsl>store:///identity.xsl</DefStylesheetForXsl>
+<DefXQueryForJSON>store:///reject-all-json.xq</DefXQueryForJSON>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_0</Rule></PolicyMaps>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_1</Rule></PolicyMaps>
+<PolicyMaps>
+<Match class="Matching">matchall</Match>
+<Rule class="StylePolicyRule">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY_rule_2</Rule></PolicyMaps></StylePolicy><PolicyAttachments name="SFTP_ESB_PI320_VENTUREPO_CEVA_MPGW" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<EnforcementMode>enforce</EnforcementMode>
+<PolicyReferences>on</PolicyReferences>
+<SLAEnforcementMode>allow-if-no-sla</SLAEnforcementMode></PolicyAttachments><MultiProtocolGateway name="SFTP_ESB_PI320_VENTUREPO_CEVA_MPGW" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>SFTP_ESB_PI320_VENTUREPO_CEVA_MPGW</UserSummary>
+<Priority>normal</Priority>
+<FrontProtocol class="SFTPFilePollerSourceProtocolHandler">SFTP_ESB_PI320_VENTUREPO_FSH</FrontProtocol>
+<XMLManager class="XMLManager">SFTP_CEVA_XML_MANAGER</XMLManager>
+<SSLClientConfigType>client</SSLClientConfigType>
+<SSLClient class="SSLClientProfile">HTTPS_CEVA_SSL_CLIENT_PROFILE</SSLClient>
+<DefaultParamNamespace>http://www.datapower.com/param/config</DefaultParamNamespace>
+<QueryParamNamespace>http://www.datapower.com/param/query</QueryParamNamespace>
+<PropagateURI>on</PropagateURI>
+<MonitorProcessingPolicy>terminate-at-first-throttle</MonitorProcessingPolicy>
+<RequestAttachments>strip</RequestAttachments>
+<ResponseAttachments>strip</ResponseAttachments>
+<RequestAttachmentsFlowControl>off</RequestAttachmentsFlowControl>
+<ResponseAttachmentsFlowControl>off</ResponseAttachmentsFlowControl>
+<RootPartNotFirstAction>process-in-order</RootPartNotFirstAction>
+<FrontAttachmentFormat>dynamic</FrontAttachmentFormat>
+<BackAttachmentFormat>dynamic</BackAttachmentFormat>
+<MIMEFrontHeaders>on</MIMEFrontHeaders>
+<MIMEBackHeaders>on</MIMEBackHeaders>
+<StreamOutputToBack>buffer-until-verification</StreamOutputToBack>
+<StreamOutputToFront>buffer-until-verification</StreamOutputToFront>
+<MaxMessageSize>0</MaxMessageSize>
+<GatewayParserLimits>off</GatewayParserLimits>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<ParserLimitsAttachmentByteCount>2000000000</ParserLimitsAttachmentByteCount>
+<ParserLimitsAttachmentPackageByteCount>0</ParserLimitsAttachmentPackageByteCount>
+<DebugMode persisted="false">on</DebugMode>
+<DebuggerType>internal</DebuggerType>
+<DebugHistory>25</DebugHistory>
+<FlowControl>off</FlowControl>
+<SOAPSchemaURL>store:///schemas/soap-envelope.xsd</SOAPSchemaURL>
+<FrontTimeout>120</FrontTimeout>
+<BackTimeout>120</BackTimeout>
+<FrontPersistentTimeout>180</FrontPersistentTimeout>
+<BackPersistentTimeout>180</BackPersistentTimeout>
+<IncludeResponseTypeEncoding>off</IncludeResponseTypeEncoding>
+<BackHTTPVersion>HTTP/1.1</BackHTTPVersion>
+<PersistentConnections>on</PersistentConnections>
+<LoopDetection>off</LoopDetection>
+<DoHostRewriting>on</DoHostRewriting>
+<DoChunkedUpload>off</DoChunkedUpload>
+<ProcessHTTPErrors>on</ProcessHTTPErrors>
+<HTTPClientIPLabel>X-Client-IP</HTTPClientIPLabel>
+<HTTPLogCorIDLabel>X-Global-Transaction-ID</HTTPLogCorIDLabel>
+<InOrderMode>
+<Request>off</Request>
+<Backend>off</Backend>
+<Response>off</Response></InOrderMode>
+<WSAMode>sync2sync</WSAMode>
+<WSARequireAAA>on</WSARequireAAA>
+<WSAStrip>on</WSAStrip>
+<WSADefaultReplyTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultReplyTo>
+<WSADefaultFaultTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultFaultTo>
+<WSAForce>off</WSAForce>
+<WSAGenStyle>sync</WSAGenStyle>
+<WSAHTTPAsyncResponseCode>204</WSAHTTPAsyncResponseCode>
+<WSATimeout>120</WSATimeout>
+<WSRMEnabled>off</WSRMEnabled>
+<WSRMSequenceExpiration>3600</WSRMSequenceExpiration>
+<WSRMDestinationAcceptCreateSequence>on</WSRMDestinationAcceptCreateSequence>
+<WSRMDestinationMaximumSequences>400</WSRMDestinationMaximumSequences>
+<WSRMDestinationInOrder>off</WSRMDestinationInOrder>
+<WSRMDestinationMaximumInOrderQueueLength>10</WSRMDestinationMaximumInOrderQueueLength>
+<WSRMDestinationAcceptOffers>off</WSRMDestinationAcceptOffers>
+<WSRMFrontForce>off</WSRMFrontForce>
+<WSRMBackForce>off</WSRMBackForce>
+<WSRMBackCreateSequence>off</WSRMBackCreateSequence>
+<WSRMFrontCreateSequence>off</WSRMFrontCreateSequence>
+<WSRMSourceMakeOffer>off</WSRMSourceMakeOffer>
+<WSRMUsesSequenceSSL>off</WSRMUsesSequenceSSL>
+<WSRMSourceMaximumSequences>400</WSRMSourceMaximumSequences>
+<WSRMSourceRetransmissionInterval>10</WSRMSourceRetransmissionInterval>
+<WSRMSourceExponentialBackoff>on</WSRMSourceExponentialBackoff>
+<WSRMSourceMaximumRetransmissions>4</WSRMSourceMaximumRetransmissions>
+<WSRMSourceMaximumQueueLength>30</WSRMSourceMaximumQueueLength>
+<WSRMSourceRequestAckCount>1</WSRMSourceRequestAckCount>
+<WSRMSourceInactivityClose>360</WSRMSourceInactivityClose>
+<ForcePolicyExec>off</ForcePolicyExec>
+<RewriteErrors>on</RewriteErrors>
+<DelayErrors>on</DelayErrors>
+<DelayErrorsDuration>1000</DelayErrorsDuration>
+<RequestType>xml</RequestType>
+<ResponseType>xml</ResponseType>
+<FollowRedirects>on</FollowRedirects>
+<RewriteLocationHeader>off</RewriteLocationHeader>
+<StylePolicy class="StylePolicy">SFTP_ESB_PI320_VENTUREPO_CEVA_PPY</StylePolicy>
+<Type>dynamic-backend</Type>
+<AllowCompression>off</AllowCompression>
+<AllowCacheControlHeader>off</AllowCacheControlHeader>
+<PolicyAttachments class="PolicyAttachments">SFTP_ESB_PI320_VENTUREPO_CEVA_MPGW</PolicyAttachments>
+<WSMAgentMonitor>off</WSMAgentMonitor>
+<WSMAgentMonitorPCM>all-messages</WSMAgentMonitorPCM>
+<ProxyHTTPResponse>off</ProxyHTTPResponse>
+<TransactionTimeout>0</TransactionTimeout></MultiProtocolGateway></configuration><files><file name="webgui:///clixform.xsl" src="dp-aux/clixform.xsl" location="dp-aux" internal="true" hash="JWCmCYFwjG0ku59O8LehfGCkiIM="/><file name="webgui:///SchemaUtil.xsl" src="dp-aux/SchemaUtil.xsl" location="dp-aux" internal="true" hash="ZnCYHBrcIPvfLAXYOIKIL0KXIbo="/><file name="webgui:///management.xsl" src="dp-aux/management.xsl" location="dp-aux" internal="true" hash="pi0c46mGrlbqTpsWjG3QUxFOCYU="/><file name="webgui:///map-dmz.xsl" src="dp-aux/map-dmz.xsl" location="dp-aux" internal="true" hash="S8LbpfukTeInHK2d6DnQfdiZmd4="/><file name="webgui:///drMgmt.xml" src="dp-aux/drMgmt.xml" location="dp-aux" internal="true" hash="709EemsOUSjT1CP5f6unp1Ou4Xw="/><file name="webgui:///basetypes.xml" src="dp-aux/basetypes.xml" location="dp-aux" internal="true" hash="HrLsg2FhC6fPlGYI25NijeP828E="/></files></datapower-configuration>
